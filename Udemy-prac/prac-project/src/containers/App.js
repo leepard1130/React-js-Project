@@ -4,6 +4,10 @@ import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/cockpit/cockpit';
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   state = {
     persons: [
       { id: 'asfa1', name: 'Max', age: 28 },
@@ -13,6 +17,15 @@ class App extends Component {
     otherState: 'some other value',
     showPersons: false
   };
+
+  static getDerivedStateFromProps (props, state) {
+    return state;
+  };
+
+  componentDidMount() {
+
+  };
+
 
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
