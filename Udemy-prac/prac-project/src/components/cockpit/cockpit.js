@@ -7,7 +7,18 @@ const cockpit = (props) => {
         setTimeout(() => {
             alert('data has been saved on cloud!');
         },1000);
-    },[props.persons]);
+        return () => {
+            console.log('[Cockpit.js] cleanup work in useEffect');
+        };
+    //only execute once
+    },[]);
+
+    useEffect(() => {
+        console.log('[Cockpit.js] 2nd useEffect');
+        return () => {
+            console.log('[Cockpit.js] 2nd cleanup work in useEffect');
+        };
+    });
 
     const assignedClasses = [];
     let btnClass = ' ';
