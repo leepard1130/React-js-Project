@@ -4,9 +4,9 @@ import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/cockpit/cockpit';
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   state = {
     persons: [
@@ -23,8 +23,16 @@ class App extends Component {
   };
 
   componentDidMount() {
-
+    console.log("[APP.js] componentDidMount");
   };
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('[App.js] shouldComponentUpdate');
+  }
+
+  componentDidUpdate() {
+    console.log('[App.js] componentDidUpdate')
+  }
 
 
   nameChangedHandler = (event, id) => {
