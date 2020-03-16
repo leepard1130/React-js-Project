@@ -4,6 +4,7 @@ import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/cockpit/cockpit';
 import withClass from '../hoc/WithClass';
+import Auxiliary from '../hoc/Auxiliary';
 
 class App extends Component {
   // constructor(props) {
@@ -84,7 +85,7 @@ class App extends Component {
     }
 
     return (
-      <withClass class={classes.App}>
+      <Auxiliary>
         <button 
           onClick={() => {this.setState({showCockpit: false})}}>
             Remove Cockpit</button>
@@ -94,10 +95,10 @@ class App extends Component {
         clicked = {this.togglePersonsHandler}
         /> : null}
         {persons}
-      </withClass>
+      </Auxiliary>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
 }
 
-export default App;
+export default withClass(App, classes.App);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import classes from './Person.css';
+// import classes from './Person.css';
 import Aux from '../../../hoc/Auxiliary';
 
 class Person extends Component {
