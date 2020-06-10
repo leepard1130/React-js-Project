@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import './Blog.css';
 import Posts from '../Blog/Posts/Posts';
 
@@ -16,7 +17,7 @@ class Blog extends Component {
                         </ul>
                     </nav>
                 </header>
-                <Posts />
+                <Route path = "/" render = { ()=><h1>home</h1> } />
             </div>
         );
     }
