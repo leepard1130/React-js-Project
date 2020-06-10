@@ -1,4 +1,6 @@
 import React from 'react';
+//使用這個HOC component 並且將post轉成 functional compoent可以將post放到整個資料結構裡
+//import { withRouter } from 'react-router-dom';
 
 import './Post.css';
 
