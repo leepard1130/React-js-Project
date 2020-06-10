@@ -15,7 +15,10 @@ class Blog extends Component {
                         <ul>
                             <li><Link to = "/">Home</Link></li>
                             <li><Link to = {{
+                                //this is absolute path
                                 pathname: '/new-post'
+                                //this is relative path
+                                //pathname: this.props.match.url + '/new-post'
                             }}>New Post</Link></li>
                         </ul>
                     </nav>
