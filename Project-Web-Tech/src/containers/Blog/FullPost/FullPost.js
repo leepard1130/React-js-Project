@@ -8,10 +8,11 @@ class FullPost extends Component {
         loadedPosts: null
     }
 
-    componentDidUpdate () {
-        if (this.props.id) {
+    componentDidMount () {
+        //可以把props的資料結構印出來在console以確認id的格式
+        if (this.props.match.params.id) {
             if (!this.state.loadedPosts || (this.state.loadedPosts && this.state.loadedPosts.id !== this.props.id)) {
-                axios.get('/posts/' + this.props.id)
+                axios.get('/posts/' + this.props.match.params.id)
                 .then(response => {
                     // console.log(response);
                     this.setState({loadedPosts:response.data})
