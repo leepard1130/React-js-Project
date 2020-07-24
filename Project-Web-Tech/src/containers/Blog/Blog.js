@@ -13,7 +13,8 @@ class Blog extends Component {
                 <header>
                     <nav>
                         <ul>
-                            <li><NavLink to = "/posts/" 
+                            <li><NavLink 
+                                to = "/posts/" 
                                 exact
                                 //不要用default的active
                                 activeClassName = "my-active"
@@ -23,7 +24,9 @@ class Blog extends Component {
                                 }}>Posts</NavLink></li>
                             <li><NavLink to = {{
                                 //this is absolute path
-                                pathname: '/new-post'
+                                pathname: '/new-post',
+                                hash:　'#submit',
+                                search: '?quick-submit = true'
                                 //this is relative path
                                 //pathname: this.props.match.url + '/new-post'
                             }}>New Post</NavLink></li>
