@@ -16,8 +16,8 @@ export default function NewProject({onAdd, onCancel}) {
 
         //validation...
         if(enteredTitle.trim() === '' ||
-            enteredDescription.trim() ||
-            enteredDuedate.trim()        
+            enteredDescription.trim() === '' ||
+            enteredDuedate.trim() === ''      
         ) {
             modal.current.open();
             return;
@@ -59,7 +59,7 @@ export default function NewProject({onAdd, onCancel}) {
                 </menu>
                 <div>
                     <Input type="text" ref={title} label="Title" />
-                    <Input ref={description} label="Description"/>
+                    <Input textarea={description} ref={description} label="Description"/>
                     <Input type= "date" ref={dueDate} label="Due Date" />
                 </div>
             </div>
